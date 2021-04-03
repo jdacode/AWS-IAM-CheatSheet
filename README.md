@@ -22,9 +22,9 @@
         
 ### Role
 
-        Allow users or services to access resources.
+Allow users or services to access resources.
         
-        Roles can be used by the following:
+Roles can be used by the following:
 
         - An IAM user in the same AWS account as the role
         - An IAM user in a different AWS account than the role
