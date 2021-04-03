@@ -94,21 +94,21 @@ Helps to determine what they can access
 
 The information in a statement is contained within a series of elements.
 
-- Version – Specify the version of the policy language that you want to use. As a best practice, use the latest 2012-10-17 version.
+- **Version** – Specify the version of the policy language that you want to use. As a best practice, use the latest 2012-10-17 version.
 
-- Statement – Use this main policy element as a container for the following elements. You can include more than one statement in a policy.
+- **Statement** – Use this main policy element as a container for the following elements. You can include more than one statement in a policy.
 
-- Sid (Optional) – Include an optional statement ID to differentiate between your statements.
+- **Sid (Optional)** – Include an optional statement ID to differentiate between your statements.
 
-- Effect – Use Allow or Deny to indicate whether the policy allows or denies access.
+- **Effect** – Use Allow or Deny to indicate whether the policy allows or denies access.
 
-- Principal (Required in only some circumstances) – If you create a resource-based policy, you must indicate the account, user, role, or federated user to which you would like to allow or deny access. If you are creating an IAM permissions policy to attach to a user or role, you cannot include this element. The principal is implied as that user or role.
+- **Principal (Required in only some circumstances)** – If you create a resource-based policy, you must indicate the account, user, role, or federated user to which you would like to allow or deny access. If you are creating an IAM permissions policy to attach to a user or role, you cannot include this element. The principal is implied as that user or role.
 
-- Action – Include a list of actions that the policy allows or denies.
+- **Action** – Include a list of actions that the policy allows or denies.
 
-- Resource (Required in only some circumstances) – If you create an IAM permissions policy, you must specify a list of resources to which the actions apply. If you create a resource-based policy, this element is optional. If you do not include this element, then the resource to which the action applies is the resource to which the policy is attached.
+- **Resource (Required in only some circumstances)** – If you create an IAM permissions policy, you must specify a list of resources to which the actions apply. If you create a resource-based policy, this element is optional. If you do not include this element, then the resource to which the action applies is the resource to which the policy is attached.
 
-- Condition (Optional) – Specify the circumstances under which the policy grants permission.
+- **Condition (Optional)** – Specify the circumstances under which the policy grants permission.
 
 
 
