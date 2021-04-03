@@ -68,7 +68,7 @@ You can use the AWS Security Token Service (AWS STS) to create and provide trust
 
 <br><br>
 
-## IAM POLICY:
+## IAM POLICIES:
         
 Helps to determine what they can access
 
@@ -87,28 +87,28 @@ Helps to determine what they can access
 
 <br><br>
 
-| Policy types | Description |
-|-|-|
-| **policy** | JSON |
-| **policy** | JSON | 
-| **policy** | JSON | 
-| **policy** | JSON | 
-| **policy** | JSON | 
-| **policy** | JSON | 
 
+### JSON policy document structure
 
-### RESOURCE POLICY:
+![AccessPolicyLanguage_General_Policy_Structure](/img/AccessPolicyLanguage_General_Policy_Structure.diagram.png)
 
-Resource based policy allows you to attach a policy directly to the resource that you want to share, instead of using a role as a proxy.
+The information in a statement is contained within a series of elements.
 
-### FUNCTION POLICY:
+- Version – Specify the version of the policy language that you want to use. As a best practice, use the latest 2012-10-17 version.
 
-### EXECUTION ROLE:
+- Statement – Use this main policy element as a container for the following elements. You can include more than one statement in a policy.
 
-### TRUST POLICY:
-        
-Helps determine who can access the resources
+- Sid (Optional) – Include an optional statement ID to differentiate between your statements.
 
+- Effect – Use Allow or Deny to indicate whether the policy allows or denies access.
+
+- Principal (Required in only some circumstances) – If you create a resource-based policy, you must indicate the account, user, role, or federated user to which you would like to allow or deny access. If you are creating an IAM permissions policy to attach to a user or role, you cannot include this element. The principal is implied as that user or role.
+
+- Action – Include a list of actions that the policy allows or denies.
+
+- Resource (Required in only some circumstances) – If you create an IAM permissions policy, you must specify a list of resources to which the actions apply. If you create a resource-based policy, this element is optional. If you do not include this element, then the resource to which the action applies is the resource to which the policy is attached.
+
+- Condition (Optional) – Specify the circumstances under which the policy grants permission.
 
 
 
