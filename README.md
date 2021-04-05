@@ -92,8 +92,8 @@ Helps to determine what they can access
 
 | Lambda Policies | Description |
 |-|-|
-| **Function policies** | - Actions on bucket X can invoke Lambda function Z. <br> - Resource policies allow for cross account access. <br> - Used for sync and async invocations. |
-| **Execution policies** | - Lambda function A can read from DynameDB table B. <br> - Define what AWS resources/API calls this function can access via IAM. <br> - Used in streaming invocations. |
+| **Function policy/Resource policies** | - AWS Lambda supports resource-based permissions policies for Lambda functions and layers. Resource-based policies let you grant usage permission to other AWS accounts on a per-resource basis. You also use a resource-based policy to allow an AWS service to invoke your function on your behalf. <br> - Actions on bucket X can invoke Lambda function Z. <br> - Resource policies allow for cross account access. <br> - Used for sync and async invocations. |
+| **Execution policy** | - Grants Lambda functions permission to access AWS services and resources. <br> - Lambda function A can read from DynameDB table B. <br> - Define what AWS resources/API calls this function can access via IAM. <br> - Used in streaming invocations. |
 
 <br><br>
 
