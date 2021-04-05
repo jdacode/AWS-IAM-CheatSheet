@@ -88,6 +88,8 @@ Helps to determine what they can access
 
 ## LAMBDA POLICIES:
 
+![lambda-policies](/img/lambda-policies.png)
+
 <br>
 
 | Lambda Policies | Description |
