@@ -132,6 +132,12 @@ The information in a statement is contained within a series of elements.
 
 <br><br>
 
+## API GATEWAY AUTHORIZERS:
+
+![comparison](/img/comparison.png)
+
+<br><br>
+
 ## License
 
 > Licensed under the [MIT](license) license.
