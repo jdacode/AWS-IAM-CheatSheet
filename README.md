@@ -138,6 +138,60 @@ The information in a statement is contained within a series of elements.
 
 <br><br>
 
+### API Gateway authorization options:
+
+##### IAM authorizers:
+
+All requests are required to be signed using the AWS Version 4 signing process (also known as SigV4). The process uses your AWS access key and secret key to compute an HMAC signature using SHA-256. You can obtain these keys as an AWS Identity and Access Management (IAM) user or by assuming an IAM role.
+
+ 
+The key information is added to the Authorization header, and behind the scenes, API Gateway takes that signed request, parses it, and determines whether or not the user who signed the request has the IAM permissions to invoke your API.
+
+<br>
+
+![iamauthorizer](/img/iamauthorizer.png)
+
+<br>
+
+##### Lambda authorizers
+
+A Lambda authorizer is simply a Lambda function that you can write to perform any custom authorization that you need. There are two types of Lambda authorizers: token and request parameter. When a client calls your API, API Gateway verifies whether a Lambda authorizer is configured for the API method. If it is, API Gateway calls the Lambda function.
+
+
+In this call, API Gateway supplies the authorization token (or the request parameters, based on the type of authorizer), and the Lambda function returns a policy that allows or denies the caller’s request.
+
+
+API Gateway also supports an optional policy cache that you can configure for your Lambda authorizer. This feature increases performance by reducing the number of invocations of your Lambda authorizer for previously authorized tokens. And with this cache, you can configure a custom time to live (TTL).
+
+
+To make it easy to get started with this method, you can choose the API Gateway Lambda authorizer blueprint when creating your authorizer function from the Lambda console.
+
+<br>
+
+![lambdaauthorizer](/img/lambdaauthorizer.png)
+
+<br>
+
+#### Cognito authorizers
+
+Amazon Cognito user pools provide a set of APIs that you can integrate into your application to provide authentication. User pools are intended for mobile or web applications where you handle user registration and sign-in directly in the application.
+
+
+To use an Amazon Cognito user pool with your API, you must first create an authorizer of the COGNITO_USER_POOLS authorizer type, and then configure an API method to use that authorizer. After a user is authenticated against the user pool, they obtain an Open ID Connect token, or OIDC token, formatted in a JSON web token.
+
+
+Users who have signed in to your application will have tokens provided to them by the user pool. Then, your application can use that token to inject information into a header in subsequent API calls that you make against your API Gateway endpoint.
+
+
+The API call succeeds only if the required token is supplied and the supplied token is valid. Otherwise, the client isn't authorized to make the call, because the client did not have credentials that could be authorized.
+
+<br>
+
+![cognitoauthorizer](/img/cognitoauthorizer.png)
+
+
+<br><br>
+
 ## License
 
 > Licensed under the [MIT](license) license.
